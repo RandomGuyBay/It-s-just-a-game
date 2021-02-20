@@ -13,6 +13,7 @@ else:
     file.close()
     difficulty = 2
 root = tk.Tk()
+root.geometry("+0+0")
 e = tk.Entry(root, width=0, borderwidth=0)
 e.place(relx=1)
 e.insert(tk.INSERT, "0")
@@ -73,7 +74,7 @@ def random_stvorec():
     global difficulty
     difficulty
     try:
-        frame = tk.Frame(root, width=750, height=700, bg="white")
+        frame = tk.Frame(root, width=750, height=700, bg="#5885AF")
         frame.pack()
         test = "yes"
         while True:
@@ -81,14 +82,14 @@ def random_stvorec():
             """farba = "#"
             for i in range(6):
                 farba += rn.choice("ABCDEF0123456789")"""
-            farba = "black"
+            farba = "#43B0F1"
             x = rn.random()
             y = rn.random()
             if x >= 0.95:
                 x = 0.95
             if y >= 0.95:
                 y = 0.95
-            button = tk.Button(frame, bg=farba, activebackground=farba, command=lambda: add_bod(test))
+            button = tk.Button(frame, bg=farba, activebackground=farba, command=lambda: add_bod(test), bd=0)
             button.place(relx=x, rely=y, relwidth=0.05, relheight=0.055)
             time.sleep(float(difficulty))
             button.place_forget()
@@ -99,6 +100,6 @@ thread_1 = td.Thread(target=random_stvorec)
 thread_1.start()
 canvas.pack()
 canvas.create_image(0,0, anchor='nw', image=wallpaper)
-menu = tk.Button(canvas, text="Main menu", font=("Calibry", 25), command=lambda: go_menu())
+menu = tk.Button(canvas, text="Main menu", font=("Calibry", 25), command=lambda: go_menu(), bg="#274472", fg="white", activebackground="#000C66", activeforeground="white")
 menu.place(relx=0, rely=0, relwidth=0.25, relheight=1)
 tk.mainloop()
