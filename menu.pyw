@@ -1,12 +1,13 @@
 import tkinter as tk
 import os
+import sys
 root = tk.Tk()
 root.geometry("+0+0")
 def play():
-    os.startfile("game.pyw")
-    exit()
-def quit():
-    exit()
+    os.startfile("game.exe")
+    sys.exit()
+def end():
+    sys.exit()
 def eazy():
     file = open("difficulty.txt", "w")
     file.write("1.2")
@@ -54,6 +55,6 @@ button1 = tk.Button(frame, text="Play", font=("Calibry", 20), command=play, bg="
 button1.place(relx=0.375, rely=0.35, relheight=0.05, relwidth=0.25)
 button2 = tk.Button(frame, text="Settings", font=("Calibry", 20), command=settings, bg="#274472", fg="white", activebackground="#000C66", activeforeground="white")
 button2.place(relx=0.375, rely=0.4, relheight=0.05, relwidth=0.25)
-button3 = tk.Button(frame, text="Quit", font=("Calibry", 20), command=exit, bg="#274472", fg="white", activebackground="#000C66", activeforeground="white")
+button3 = tk.Button(frame, text="Quit", font=("Calibry", 20), command=end, bg="#274472", fg="white", activebackground="#000C66", activeforeground="white")
 button3.place(relx=0.375, rely=0.45, relheight=0.05, relwidth=0.25)
 tk.mainloop()

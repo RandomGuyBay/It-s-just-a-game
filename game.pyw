@@ -3,6 +3,7 @@ import random as rn
 import threading as td
 import time
 import os
+import sys
 if os.path.exists("difficulty.txt"):
     file = open("difficulty.txt")
     difficulty = file.read()
@@ -18,8 +19,8 @@ e = tk.Entry(root, width=0, borderwidth=0)
 e.place(relx=1)
 e.insert(tk.INSERT, "0")
 def go_menu():
-    os.startfile("menu.pyw")
-    exit()
+    os.startfile("menu.exe")
+    sys.exit()
 if bool(os.path.exists("coins.txt")):
     file = open("coins.txt")
     money = file.read()
